@@ -1,0 +1,6 @@
+node_modules/
+educa.sqlite
+educa.sqlite-shm
+educa.sqlite-wal
+uploads/*
+!uploads/.gitkeep

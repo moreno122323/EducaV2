@@ -1,0 +1,16 @@
+{
+  "name": "educa-v2",
+  "version": "1.0.0",
+  "description": "Plataforma educativa con grupos privados",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "multer": "^2.0.2"
+  }
+}
