@@ -8,10 +8,12 @@
 </head>
 <body>
 <div id="app">
+
   <section id="auth" class="auth">
     <div class="card auth-card">
       <h1>EducaV2</h1>
       <p class="subtitle">Plataforma educativa privada</p>
+
       <div class="tabs">
         <button id="tabLogin" class="active">Iniciar sesión</button>
         <button id="tabRegister">Registrarse</button>
@@ -27,11 +29,14 @@
         <input id="regName" placeholder="Nombre completo" required>
         <input id="regEmail" type="email" placeholder="Correo electrónico" required>
         <input id="regPassword" type="password" placeholder="Contraseña (mín. 6)" required>
+
         <select id="regRole">
           <option value="student">Estudiante</option>
           <option value="teacher">Profesor</option>
         </select>
+
         <input id="teacherCode" class="hidden" placeholder="Código de profesor">
+
         <button class="primary" type="submit">Crear cuenta</button>
       </form>
 
@@ -39,67 +44,152 @@
     </div>
   </section>
 
+
   <section id="dashboard" class="hidden">
+
     <header>
-      <div><strong>EducaV2</strong><span id="roleBadge"></span></div>
-      <div class="header-right"><span id="userInfo"></span><button id="logoutBtn">Salir</button></div>
+      <div>
+        <strong>EducaV2</strong>
+        <span id="roleBadge"></span>
+      </div>
+
+      <div class="header-right">
+        <span id="userInfo"></span>
+        <button id="logoutBtn">Salir</button>
+      </div>
     </header>
 
+
     <main class="layout">
+
       <aside class="sidebar">
-        <button id="newGroupBtn" class="primary full hidden">+ Crear grupo</button>
-        <button id="joinGroupBtn" class="secondary full">Unirme con código</button>
+
+        <button id="newGroupBtn" class="primary full hidden">
+          + Crear grupo
+        </button>
+
+        <button id="joinGroupBtn" class="secondary full">
+          Unirme con código
+        </button>
+
         <h3>Mis grupos</h3>
+
         <div id="groupsList"></div>
+
       </aside>
 
+
       <section class="content">
+
+        <!-- TABLÓN DE ANUNCIOS -->
         <div id="welcome" class="welcome">
-          <h2>Bienvenido a EducaV2</h2>
-          <p>Selecciona un grupo para comenzar.</p>
+
+          <div class="announcement-head">
+
+            <div>
+              <h2>Tablón de anuncios</h2>
+              <p>Noticias y avisos importantes de EducaV2.</p>
+            </div>
+
+            <button id="newAnnouncementBtn" class="primary hidden">
+              + Publicar anuncio
+            </button>
+
+          </div>
+
+          <div id="announcements"></div>
+
         </div>
 
+
+        <!-- GRUPO -->
         <div id="groupView" class="hidden">
+
           <div class="group-head">
+
             <div>
               <h2 id="groupName"></h2>
               <p id="groupDescription"></p>
               <span id="groupCode" class="code"></span>
             </div>
+
             <div class="group-actions">
               <button id="membersBtn">Miembros</button>
-              <button id="deleteGroupBtn" class="danger hidden">Eliminar grupo</button>
+
+              <button id="deleteGroupBtn" class="danger hidden">
+                Eliminar grupo
+              </button>
             </div>
+
           </div>
 
+
           <div id="membersPanel" class="members hidden"></div>
+
           <div id="messages" class="messages"></div>
 
+
           <form id="messageForm" class="composer">
-            <input id="messageText" placeholder="Escribe un mensaje..." autocomplete="off">
-            <label class="fileBtn">📎<input id="fileInput" type="file" hidden></label>
-            <button class="primary" type="submit">Enviar</button>
+
+            <input
+              id="messageText"
+              placeholder="Escribe un mensaje..."
+              autocomplete="off"
+            >
+
+            <label class="fileBtn">
+              📎
+              <input id="fileInput" type="file" hidden>
+            </label>
+
+            <button class="primary" type="submit">
+              Enviar
+            </button>
+
           </form>
+
           <div id="selectedFile"></div>
+
         </div>
 
+
+        <!-- PANEL ADMINISTRADOR -->
         <div id="adminView" class="hidden">
+
           <h2>Panel de administrador</h2>
+
           <div id="adminStats" class="stats"></div>
+
           <div id="adminUsers"></div>
+
         </div>
+
       </section>
+
     </main>
+
   </section>
+
 </div>
 
+
+<!-- MODAL -->
 <div id="modal" class="modal hidden">
+
   <div class="card modal-card">
-    <button id="closeModal" class="close">×</button>
+
+    <button id="closeModal" class="close">
+      ×
+    </button>
+
     <div id="modalContent"></div>
+
   </div>
+
 </div>
+
 
 <script src="app.js"></script>
+
 </body>
 </html>
